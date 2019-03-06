@@ -7,5 +7,5 @@ Make sure you have your tools!
 2. Fork repo
 3. Make sure you run "npm install"
 4. Start with node server.js
-5. Host site on platform of your choosing before BV code integration
+5. Host site on platform of your choosing before BV code integration (Heroku recommended. gh-pages and netlify can't host back end)
 
