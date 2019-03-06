@@ -1,0 +1,14 @@
+<header>
+  {{> header}}
+</header>
+
+<div class="pieceTab">
+    <div class="imgTab">
+      <img src={{art_info.photourl}} alt={{art_info.title}}>
+    </div>
+    <div class="pieceDesc">
+        <p>Thank you for your Patronage!</p>
+        <p class="summary">You ordered <span class="emphasize">{{purchaseData.quantity}}</span> of <span class="emphasize">{{art_info.title}}</span></p>
+        <p>Your Total is <span class="emphasize">{{purchaseData.total}}</span></p>
+    </div>
+</div>

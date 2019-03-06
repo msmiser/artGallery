@@ -1,0 +1,132 @@
+body{
+    font-family: 'Suranna', serif;
+}
+h1, h3{
+    text-align: center;
+}
+
+h1{ 
+    font-size: 56px;
+    color:#7C88BF;
+    margin-bottom: 10px;
+    font-family: 'Mr Dafoe', cursive;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+
+.navitems{
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    padding: 1% 3%;
+    background-color:#AFBBF2;
+}
+
+nav li{
+    list-style: none;
+    float: left; 
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.artContainer{
+    display: flex;
+    flex-wrap: wrap;
+    clear: both;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.artPiece{
+    display:flex;
+    flex-direction: column;
+    width: 33%;
+    height: 310px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.artPiece img{
+    text-align: center;
+    margin: auto;
+    max-height: 270px;
+}
+
+.artPiece h6{
+    text-align: center;
+    height: 20px;
+}
+
+/* artistpage */
+
+.scriptName{
+    font-family: 'Mr Dafoe', cursive;
+}
+
+.about{
+    width: 80vw;
+    margin: 0 auto 40px; 
+}
+
+/* artpage */
+.pieceTab{
+    padding: 20px;
+}
+
+.imgTab{
+    float: left;
+    max-width: 40%;
+    margin-right: 10%;
+    height: 500px;
+}
+
+.pieceTab img{
+    max-width: 100%;
+}
+
+.purchaseInfo{
+    float: left;
+    max-width: 40%;
+}
+
+.pieceDesc .title{
+    font-size: 32px;
+}
+
+.pieceDesc .desc{
+    margin: 20px 0;
+}
+
+.box{
+    display: flex;
+    align-items: baseline;
+}
+
+.box input{
+    margin-left: 5px;
+    width: 20px;
+}
+
+#alertMessage{
+    color: red;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 12px;
+    margin: 0;
+    margin-left: 5px;
+}
+
+/* confirmation page */
+.emphasize{
+    margin: 0 5px;
+    font-family: 'Mr Dafoe', cursive;
+    color:#AFBBF2;
+}

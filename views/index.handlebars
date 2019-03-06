@@ -1,0 +1,14 @@
+<header>
+  {{> header}}
+</header>
+
+<section>
+      <div class="artContainer">
+        {{#each art}}
+        <div class="artPiece" data-id={{id}}>
+          <img src={{photourl}} alt={{title}}>
+          <h6>{{title}}</h6>
+        </div>
+        {{/each}}
+      </div>
+</section> 

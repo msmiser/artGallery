@@ -1,0 +1,26 @@
+<header>
+  {{> header}}
+</header>
+
+<div class="pieceTab">
+    <div class="imgTab">
+      <img src={{art_info.photourl}} alt={{art_info.title}}>
+    </div>
+    <div class="pieceDesc">
+      <div class="title"><strong>{{art_info.title}}</strong></div>
+      <div class="artistname">by {{art_info.displayName}}</div>
+      <div class="desc">{{art_info.description}}</div>
+    </div>
+
+    <div class="purchaseInfo">
+      <p class="price">Price: {{art_info.displayPrice}}</p>
+      <div class="box">
+        <label for="quantity">Quantity</label>
+        <input id="quantity" value="1">
+        <p id="alertMessage"></p>
+      </div>
+      <p id="total" data-value="{{art_info.price}}" >Total: {{art_info.displayPrice}}</p>
+      <button data-id="{{art_info.id}}" id="confirmation">Purchase</button>
+    </div>
+  </div>
+</div>

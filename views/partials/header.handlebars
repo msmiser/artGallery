@@ -1,0 +1,11 @@
+<a href="/"><h1>Mousse Air Pavilion</h1></a>
+<h3 class="artists">This Season's Featured Artists</h3>
+<nav class="navbar">
+    <ul class="navitems">
+        {{#each artists}}
+            <li class="artist" data-id={{name}}>
+                {{displayName}}
+            </li>
+        {{/each}}
+    </ul>
+</nav>
