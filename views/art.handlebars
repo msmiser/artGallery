@@ -2,12 +2,13 @@
   {{> header}}
 </header>
 
-<div class="pieceTab">
+<div itemscope itemtype="https://schema.org/Product">
+  <div class="pieceTab clearfix">
     <div class="imgTab">
       <img src={{art_info.photourl}} alt={{art_info.title}}>
     </div>
     <div class="pieceDesc">
-      <div class="title"><strong>{{art_info.title}}</strong></div>
+      <div class="title" itemprop="name"><strong>{{art_info.title}}</strong></div>
       <div class="artistname">by {{art_info.displayName}}</div>
       <div class="desc">{{art_info.description}}</div>
     </div>
@@ -19,8 +20,32 @@
         <input id="quantity" value="1">
         <p id="alertMessage"></p>
       </div>
-      <p id="total" data-value="{{art_info.price}}" >Total: {{art_info.displayPrice}}</p>
+      <p id="total" data-value="{{art_info.price}}">Total: {{art_info.displayPrice}}</p>
       <button data-id="{{art_info.id}}" id="confirmation">Purchase</button>
     </div>
   </div>
+  {{!-- <div class="clearfix"></div> --}}
+  <div class="reviewStuff">
+    <div data-bv-show="rating_summary" data-bv-product-id="{{art_info.id}}"></div>
+    <div data-bv-show="reviews" data-bv-product-id="{{art_info.id}}"></div>
 </div>
+
+<script async type="text/javascript">
+  window.bvDCC = {
+    catalogData: {
+      locale: "en_US",
+      catalogProducts: [{
+        "productId": {{ art_info.id }},
+    "productName": {{ art_info.title }},
+      }]
+    }
+  };
+  window.bvCallback = function (BV) {
+    BV.pixel.trackEvent("CatalogUpdate", {
+      type: 'Product',
+      locale: window.bvDCC.catalogData.locale,
+      catalogProducts: window.bvDCC.catalogData.catalogProducts
+    });
+  };
+
+  <script>
