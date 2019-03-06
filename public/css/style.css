@@ -38,6 +38,8 @@ nav li{
     cursor: pointer;
 }
 
+/* end of header */
+
 .artContainer{
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +52,7 @@ nav li{
     display:flex;
     flex-direction: column;
     width: 33%;
-    height: 310px;
+    height: 350px;
     margin-bottom: 40px;
     cursor: pointer;
 }
@@ -62,6 +64,11 @@ nav li{
 }
 
 .artPiece h6{
+    text-align: center;
+    height: 20px;
+}
+
+.artPiece div{
     text-align: center;
     height: 20px;
 }

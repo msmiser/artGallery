@@ -8,7 +8,8 @@
         {{#each art}}
         <div class="artPiece" data-id={{ id }}>
           <img src={{ photourl }} alt={{ title }}>
-            <h6>{{ title }}</h6>
+          <h6>{{ title }}</h6>
+          <div data-bv-show="inline_rating" data-bv-product-id="{{id}}" data-bv-seo="false" data-bv-redirect-url="https://fineartgallery.herokuapp.com/art/{{id}}"></div>
         </div>
           {{/ each}}
       </div>
