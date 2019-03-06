@@ -28,6 +28,7 @@
   <div class="reviewStuff">
     <div data-bv-show="rating_summary" data-bv-product-id="{{art_info.id}}"></div>
     <div data-bv-show="reviews" data-bv-product-id="{{art_info.id}}"></div>
+  </div>
 </div>
 
 <script async type="text/javascript">
@@ -35,8 +36,8 @@
     catalogData: {
       locale: "en_US",
       catalogProducts: [{
-        "productId": {{ art_info.id }},
-    "productName": {{ art_info.title }},
+        "productId": "{{ art_info.id }}",
+        "productName": "{{ art_info.title }}",
       }]
     }
   };
@@ -47,5 +48,4 @@
       catalogProducts: window.bvDCC.catalogData.catalogProducts
     });
   };
-
-  <script>
+</script>
