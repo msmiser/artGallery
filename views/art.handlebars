@@ -36,17 +36,17 @@
       catalogData: {
         locale: "en_US",
         catalogProducts: [{
-          "productId": "{{art_info.id}}",
-          "productName": "{{art_info.title}}",
-          "productDescription": "{{art_info.description}}",
-          "productImageURL": "{{art_info.photourl}}",
-          "productPageURL": "https://fineartgallery.herokuapp.com/art/{{art_info.id}}"
+          productId: "{{art_info.id}}",
+          productName: "{{art_info.title}}",
+          productDescription: "{{art_info.description}}",
+          productImageURL: "{{art_info.photourl}}",
+          productPageURL: "https://fineartgallery.herokuapp.com/art/{{art_info.id}}"
         }]
       }
     };
     window.bvCallback = function (BV) {
       BV.pixel.trackEvent("CatalogUpdate", {
-        type: 'Product',
+        type: "Product",
         locale: window.bvDCC.catalogData.locale,
         catalogProducts: window.bvDCC.catalogData.catalogProducts
       });
