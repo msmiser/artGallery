@@ -10,6 +10,7 @@
     <div class="pieceDesc">
       <div class="title" itemprop="name"><strong>{{art_info.title}}</strong></div>
       <div class="artistname">by {{art_info.displayName}}</div>
+      <div data-bv-show="rating_summary" data-bv-product-id="{{art_info.id}}"></div>
       <div class="desc">{{art_info.description}}</div>
     </div>
 
@@ -25,27 +26,33 @@
     </div>
   </div>
   {{!-- <div class="clearfix"></div> --}}
-  <div class="reviewStuff">
-    <div data-bv-show="rating_summary" data-bv-product-id="{{art_info.id}}"></div>
+  <div class="reviewStuff"> 
     <div data-bv-show="reviews" data-bv-product-id="{{art_info.id}}"></div>
   </div>
 </div>
 
-<script async type="text/javascript">
-  window.bvDCC = {
-    catalogData: {
-      locale: "en_US",
-      catalogProducts: [{
-        "productId": "{{ art_info.id }}",
-        "productName": "{{ art_info.title }}",
-      }]
-    }
-  };
-  window.bvCallback = function (BV) {
-    BV.pixel.trackEvent("CatalogUpdate", {
-      type: 'Product',
-      locale: window.bvDCC.catalogData.locale,
-      catalogProducts: window.bvDCC.catalogData.catalogProducts
-    });
-  };
+<script type="text/javascript">
+window.addEventListener('load', 
+function(){
+    var site = window.location.href;
+    window.bvDCC = {
+      catalogData: {
+        locale: "en_US",
+        catalogProducts: [{
+          "productId": "{{art_info.id}}",
+          "productName": "{{art_info.title}}",
+          "productDescription": "{{art_info.description}}",
+          "productImageURL": "{{art_info.photourl}}",
+          "productPageURL": site
+        }]
+      }
+    };
+    window.bvCallback = function (BV) {
+      BV.pixel.trackEvent("CatalogUpdate", {
+        type: 'Product',
+        locale: window.bvDCC.catalogData.locale,
+        catalogProducts: window.bvDCC.catalogData.catalogProducts
+      });
+    };
+  });
 </script>
