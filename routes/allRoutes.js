@@ -29,12 +29,13 @@ var headers;
 
     router.get('/art/:id', function (req,res) {
         headers=req.headers;
+        // console.log(req);
         var thisPiece = req.params.id;
         const piece = art_raw.find( work=> work.id === thisPiece );
         var artPage={
             artists: artists_raw,
             art_info: piece ,
-            hostdata: headers.host  
+            hostdata: headers.host 
         };
         res.render('art', artPage);    
     });
