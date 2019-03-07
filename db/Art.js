@@ -77,7 +77,7 @@ var artProducts=[{
     displayPrice:"$85.00",
     price:"85",
     multiple:true,
-    id:"1111111"
+    id:"2111111"
 },{
     category:"delventos",
     displayName:"Del Ventos",
@@ -87,7 +87,7 @@ var artProducts=[{
     displayPrice:"$150.00",
     price:"150",
     multiple:true,
-    id:"2222222"
+    id:"3222222"
 },{
     category:"delventos",
     displayName:"Del Ventos",
@@ -97,7 +97,7 @@ var artProducts=[{
     displayPrice:"$1,000.00",
     price:"1000",
     multiple:false,
-    id:"3333333"
+    id:"4333333"
 },{
     category:"delventos",
     displayName:"Del Ventos",
@@ -107,7 +107,7 @@ var artProducts=[{
     displayPrice:"$38.00",
     price:"38",
     multiple:true,
-    id:"4444444"
+    id:"5444444"
 },{
     category:"cezanne",
     displayName:"Paul Cézanne",
