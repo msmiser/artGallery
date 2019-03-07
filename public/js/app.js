@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+    var url=window.location.host;
+    console.log(url);
     var formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',

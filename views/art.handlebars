@@ -5,7 +5,7 @@
 <div itemscope itemtype="https://schema.org/Product">
   <div class="pieceTab clearfix">
     <div class="imgTab">
-      <img src={{art_info.photourl}} alt={{art_info.title}}>
+      <img src="../images/{{ art_info.photourl }}" alt="{{art_info.title}}">
     </div>
     <div class="pieceDesc">
       <div class="title" itemprop="name"><strong>{{art_info.title}}</strong></div>
@@ -39,8 +39,8 @@
           productId: "{{art_info.id}}",
           productName: "{{art_info.title}}",
           productDescription: "{{art_info.description}}",
-          productImageURL: "{{art_info.photourl}}",
-          productPageURL: "https://fineartgallery.herokuapp.com/art/{{art_info.id}}"
+          productImageURL: "{{hostdata}}/images/{{art_info.photourl}}",
+          productPageURL: "{{hostdata}}/art/{{art_info.id}}"
         }]
       }
     };
