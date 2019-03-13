@@ -12,3 +12,19 @@
         <p>Your Total is <span class="emphasize">{{purchaseData.total}}</span></p>
     </div>
 </div>
+
+<script>
+window.bvCallback = function (BV) {
+  BV.pixel.trackTransaction({
+    "currency" : "USD",
+    "orderId" : "{{purchaseData.orderId}}",
+    "total" : "{{purchaseData.total}}",
+    "items" : [
+      {
+        "price" : "{{art_info.price}}",
+        "quantity" : "{{purchaseData.quantity}}"
+      }
+    ]
+  });
+};
+</script>

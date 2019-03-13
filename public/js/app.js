@@ -59,6 +59,7 @@ $( document ).ready(function() {
     });
 
     $("#confirmation").on("click", function(event) {
+      var orderId=Date.now().toString();
       var purchased = $(this).data("id");
       console.log(purchased);
       var quantity=parseInt($("input").val());
@@ -66,7 +67,8 @@ $( document ).ready(function() {
       var total=formatter.format(price*quantity);
       var purchaseData={
         quantity: quantity,
-        total: total
+        total: total,
+        orderId:orderId
       }
   
         $.ajax({

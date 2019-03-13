@@ -47,6 +47,7 @@ var headers;
         var purchaseData={
             quantity: req.body.quantity,
             total: req.body.total,
+            orderId: req.body.orderId,
             hostdata: headers.host
         }
 
@@ -58,8 +59,7 @@ var headers;
             hostdata: headers.host   
         };
         
-        res.render('purchase', purchPage);
-        // res.send({err: 0, redirectUrl: "/purchase/"+purchPiece});    
+        res.render('purchase', purchPage);    
     });
 
 
