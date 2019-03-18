@@ -81,9 +81,6 @@ $( document ).ready(function() {
           }).then(function(data){
             window.location.replace('/purchase');
           });
-          // window.location.replace('/purchase');
-          // var theTemplate = Handlebars.compile (data);
-          // $(document.body).html(theTemplate (data));
       });
     });
 

@@ -30,7 +30,6 @@ var purchPage;
 
     router.get('/art/:id', function (req,res) {
         headers=req.headers;
-        // console.log(req);
         var thisPiece = req.params.id;
         const piece = art_raw.find( work=> work.id === thisPiece );
         var artPage={
@@ -55,23 +54,10 @@ var purchPage;
             purchaseData: purchaseData
         };
         
-        // res.render('purchase', purchPage);
         res.send("ok");    
     });
 
     router.get('/purchase', function (req,res) {
-        // var purchPiece = req.params.id;
-        // var purchaseData={
-        //     quantity: req.body.quantity,
-        //     total: req.body.total,
-        //     orderId: req.body.orderId
-        // }
-
-        // const items = art_raw.find( work=> work.id === purchPiece );
-        // var purchPage={
-        //     art_info: items,
-        //     purchaseData: purchaseData
-        // };
         
         res.render('purchase', purchPage);    
     });
