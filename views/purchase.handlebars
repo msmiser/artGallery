@@ -4,7 +4,7 @@
 
 <div class="pieceTab">
     <div class="imgTab">
-      <img src={{art_info.photourl}} alt={{art_info.title}}>
+      <img src="../images/{{ art_info.photourl }}" alt="{{art_info.title}}">
     </div>
     <div class="pieceDesc">
         <p>Thank you for your Patronage!</p>
@@ -12,3 +12,19 @@
         <p>Your Total is <span class="emphasize">{{purchaseData.total}}</span></p>
     </div>
 </div>
+
+<script>
+window.bvCallback = function (BV) {
+  BV.pixel.trackTransaction({
+    "currency" : "USD",
+    "orderId" : "{{purchaseData.orderId}}",
+    "total" : "{{purchaseData.total}}",
+    "items" : [
+      {
+        "price" : "{{art_info.price}}",
+        "quantity" : "{{purchaseData.quantity}}"
+      }
+    ]
+  });
+};
+</script>

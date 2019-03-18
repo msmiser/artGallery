@@ -38,6 +38,8 @@ nav li{
     cursor: pointer;
 }
 
+/* end of header */
+
 .artContainer{
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +52,7 @@ nav li{
     display:flex;
     flex-direction: column;
     width: 33%;
-    height: 310px;
+    height: 350px;
     margin-bottom: 40px;
     cursor: pointer;
 }
@@ -62,6 +64,11 @@ nav li{
 }
 
 .artPiece h6{
+    text-align: center;
+    height: 20px;
+}
+
+.artPiece div{
     text-align: center;
     height: 20px;
 }
@@ -79,18 +86,19 @@ nav li{
 
 /* artpage */
 .pieceTab{
-    padding: 20px;
+    padding: 25px;
 }
 
 .imgTab{
     float: left;
-    max-width: 40%;
-    margin-right: 10%;
+    width: 40%;
+    margin-right: 5%;
     height: 500px;
 }
 
 .pieceTab img{
     max-width: 100%;
+    max-height: 450px;
 }
 
 .purchaseInfo{
@@ -123,6 +131,18 @@ nav li{
     margin: 0;
     margin-left: 5px;
 }
+
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+ }
+
+ .reviewStuff{
+     padding-left: 45%;
+ }
 
 /* confirmation page */
 .emphasize{

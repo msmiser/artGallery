@@ -4,11 +4,13 @@ var express=require("express");
 var router=express.Router();
 var artists_raw= require("../db/Artist.js");
 var art_raw= require("../db/Art.js");
+var headers;
+var purchPage;
 
     router.get('/', function (req, res) {
         var artistsObject = {
             artists: artists_raw,
-            art: art_raw
+            art: art_raw,
         };
         res.render('index', artistsObject);  
     });
@@ -21,39 +23,57 @@ var art_raw= require("../db/Art.js");
             artists: artists_raw,
             artist_name: bio.displayName,
             artist_desc: bio.description,
-            art: work  
+            art: work 
         };
         res.render('artist', artistPage);    
     });
 
     router.get('/art/:id', function (req,res) {
+        headers=req.headers;
+        // console.log(req);
         var thisPiece = req.params.id;
         const piece = art_raw.find( work=> work.id === thisPiece );
         var artPage={
             artists: artists_raw,
-            art_info: piece  
+            art_info: piece ,
+            hostdata: headers.host 
         };
         res.render('art', artPage);    
     });
 
     router.post('/purchase/:id', function (req,res) {
         var purchPiece = req.params.id;
-        console.log(purchPiece);
         var purchaseData={
             quantity: req.body.quantity,
-            total: req.body.total
+            total: req.body.total,
+            orderId: req.body.orderId
         }
 
         const items = art_raw.find( work=> work.id === purchPiece );
-        var purchPage={
+        purchPage={
             art_info: items,
-            purchaseData: purchaseData  
+            purchaseData: purchaseData
         };
         
-        res.render('purchase', purchPage);
-        // res.send({err: 0, redirectUrl: "/purchase/"+purchPiece});    
+        // res.render('purchase', purchPage);
+        res.send("ok");    
     });
 
+    router.get('/purchase', function (req,res) {
+        // var purchPiece = req.params.id;
+        // var purchaseData={
+        //     quantity: req.body.quantity,
+        //     total: req.body.total,
+        //     orderId: req.body.orderId
+        // }
 
+        // const items = art_raw.find( work=> work.id === purchPiece );
+        // var purchPage={
+        //     art_info: items,
+        //     purchaseData: purchaseData
+        // };
+        
+        res.render('purchase', purchPage);    
+    });
 
 module.exports = router;

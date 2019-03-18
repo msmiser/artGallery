@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
     var formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -58,24 +59,31 @@ $( document ).ready(function() {
     });
 
     $("#confirmation").on("click", function(event) {
+      var orderId=Date.now().toString();
       var purchased = $(this).data("id");
-      console.log(purchased);
       var quantity=parseInt($("input").val());
       var price=parseInt($("#total").data("value"));
       var total=formatter.format(price*quantity);
       var purchaseData={
         quantity: quantity,
-        total: total
-      }
+        total: total,
+        orderId:orderId
+      };
   
         $.ajax({
           method: "POST",
           url: "/purchase/" + purchased,
           data: purchaseData
         }).then(function(data){
-          var theTemplate = Handlebars.compile (data);
-          console.log(theTemplate);
-          $(document.body).html(theTemplate (data));
+          $.ajax({
+            method: "GET",
+            url: "/purchase",
+          }).then(function(data){
+            window.location.replace('/purchase');
+          });
+          // window.location.replace('/purchase');
+          // var theTemplate = Handlebars.compile (data);
+          // $(document.body).html(theTemplate (data));
       });
     });
 

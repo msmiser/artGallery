@@ -4,8 +4,8 @@ var artists=[{
     "description": "Marc Chagall was born Moishe Zakharovich Shagal in 1887. He was a Russian-French artist of Belarusian Jewish origin. An early modernist, he was associated with several major artistic styles and created works in virtually every artistic format, including painting, book illustrations, stained glass, stage sets, ceramic, tapestries and fine art prints."
 },{
     "name":"cezanne",
-    "displayName":"Paul Cézanne",
-    "description":"Cézanne was a French artist and Post-Impressionist painter whose work laid the foundations of the transition from the 19th-century conception of artistic endeavor to a new and radically different world of art in the 20th century. Cézanne's often repetitive, exploratory brushstrokes are highly characteristic and clearly recognizable. He used planes of colour and small brushstrokes that build up to form complex fields. The paintings convey Cézanne's intense study of his subjects."
+    "displayName":"Paul Cezanne",
+    "description":"Cezanne was a French artist and Post-Impressionist painter whose work laid the foundations of the transition from the 19th-century conception of artistic endeavor to a new and radically different world of art in the 20th century. Cezanne's often repetitive, exploratory brushstrokes are highly characteristic and clearly recognizable. He used planes of colour and small brushstrokes that build up to form complex fields. The paintings convey Cezanne's intense study of his subjects."
 },{
     "name":"pollock",
     "displayName":"Jackson Pollock",
